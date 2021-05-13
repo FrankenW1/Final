@@ -41,9 +41,9 @@ def calc_tax(state: str, income: int or float):
 def calc_asset(invested: int or float):
     amount_return_month = invested * (0.1/12)
     amount_return_year = invested * 0.1
-    return {"amount invested": float("{:.2f}".format(invested)),
-            "return per month": float("{:.2f}".format(amount_return_month)),
-            "return per year": float("{:.2f}".format(amount_return_year))}
+    return {"amount_invested": float("{:.2f}".format(invested)),
+            "return_per_month": float("{:.2f}".format(amount_return_month)),
+            "return_per_year": float("{:.2f}".format(amount_return_year))}
 app.include_router(tax_router)
 if __name__ == "__main__":
     uvicorn.run("serv:app", host="0.0.0.0", reload="true")
