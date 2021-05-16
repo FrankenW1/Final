@@ -2,7 +2,7 @@ from collections import defaultdict
 
 
 print("WITHOUT DEFAULTDICT:")
-Dict = {1: 'Geeks', 2: 'For', 3: 'Geeks'}
+Dict = {1: 'Alex', 2: 'Carlos', 3: 'James'}
 print("Dictionary:")
 print(Dict)
 print(Dict[1])
