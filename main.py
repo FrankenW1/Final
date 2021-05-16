@@ -2,7 +2,7 @@ from fastapi import FastAPI, APIRouter, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from Calculations import *
-
+from Bracketed_Taxes import *
 
 tax_router = APIRouter(prefix="/tax")
 app = FastAPI()

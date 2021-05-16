@@ -1,3 +1,4 @@
+from Bracketed_Taxes import *
 class StateIncomeTax:
     def __init__(self,name: str, abbreviation: str, tax: float):
         self.name = name
