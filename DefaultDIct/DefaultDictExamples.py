@@ -12,7 +12,6 @@ print(Dict[4])
 def def_value():
     return "Not Present"
 
-# Defining the dict
 d = defaultdict(def_value)
 d["a"] = 1
 d["b"] = 2
