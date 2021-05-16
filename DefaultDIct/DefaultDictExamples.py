@@ -1,15 +1,12 @@
 from collections import defaultdict
 
 
-# Function to return a default
-# values for keys that is not
-# present
 print("WITHOUT DEFAULTDICT:")
 Dict = {1: 'Geeks', 2: 'For', 3: 'Geeks'}
 print("Dictionary:")
 print(Dict)
 print(Dict[1])
-# print(Dict[4])
+print(Dict[4])
 
 # USING DEFAULT DICT TO RETURN NO VALUE
 def def_value():
