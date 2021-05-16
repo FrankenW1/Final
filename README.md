@@ -127,7 +127,7 @@ took in the amount invested and calculated the return based on that.
             "return_per_year": float("{:.2f}".format(amount_return_year))}
  ```
  
- 
+
  # Conclusion
  
  This project was very involved and had lots of parts.  The hardest part of this project was definitely collection of data.  Each 
@@ -135,6 +135,59 @@ took in the amount invested and calculated the return based on that.
  that I attempting to keep compatability with something else, but was a good requirement as it provided me with the experience of keeping 
  other things in mind rather than just building it to output the results I wanted.  
 
+# DefaultDict
 
+Defaultdict is another container that is in Python that is similar to dictionaries.  Defaultdict is essentially a "subclass" of dictionaries that work in the exact same way but with no key error if we attempt to pull a value that is invalid.  For example when using a Dictionary, we will attempt to pull a value that is not a part of the dictionary:
 
+```Python
+Dict = {1: 'Alex', 2: 'Carlos', 3: 'James'}
+print("Dictionary:")
+print(Dict)
+print(Dict[1])
+print(Dict[4])
+```
+This returns a key error because there is no fourth value to pull from.  This is where Defaultdict comes into play.
 
+```Python
+def def_value():
+    return "Not Present"
+
+d = defaultdict(def_value)
+d["a"] = 1
+d["b"] = 2
+
+print(d["a"])
+print(d["b"])
+print(d["f"])
+```
+
+Here, we use default dict, and instead of returning a key error when calling 'f' as a key, it rather goes back into the function def_value and returns that value which is "Not Present", so now the output will look something like this:
+
+1
+
+2
+
+Not Present
+
+Furthermore, this has another useful function: casting lists into dictionaries. 
+
+```Python
+d = defaultdict(int)
+
+L = [1, 2, 3, 4, 2, 4, 1, 2]
+
+for i in L:
+    d[i] += 1
+
+print(d)
+print(d[9])
+print(d)
+```
+
+Here, we are calling defaultdict with an (int) as the form of key, this way if we attempt to call an out of range key, it will automatically assign a value of 0 to the key of 9 as seen in the print statements.  Thus the output will go from this:
+
+defaultdict(<class 'int'>, {1: 2, 2: 3, 3: 1, 4: 2})
+
+to modifying the dictionary as thus after calling d[9]:
+
+defaultdict(<class 'int'>, {1: 2, 2: 3, 3: 1, 4: 2, 9: 0})
